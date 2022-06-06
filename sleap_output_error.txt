@@ -1,0 +1,399 @@
+2022-06-06 12:02:58.970185: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudart.so.10.1
+INFO:sleap.nn.training:Versions:
+SLEAP: 1.1.5
+TensorFlow: 2.3.1
+Numpy: 1.18.1
+Python: 3.6.15
+OS: Linux-5.13.0-44-generic-x86_64-with-debian-bullseye-sid
+INFO:sleap.nn.training:Training labels file: /home/randresdiazrincon/SLEAP_Data/labels_rat.v000.pkg.slp
+INFO:sleap.nn.training:Training profile: /home/randresdiazrincon/SLEAP_Data/training_profiles/baseline.centroid.json
+INFO:sleap.nn.training:
+INFO:sleap.nn.training:Arguments:
+INFO:sleap.nn.training:{
+    "training_job_path": "/home/randresdiazrincon/SLEAP_Data/training_profiles/baseline.centroid.json",
+    "labels_path": "/home/randresdiazrincon/SLEAP_Data/labels_rat.v000.pkg.slp",
+    "video_paths": "",
+    "val_labels": null,
+    "test_labels": null,
+    "tensorboard": false,
+    "save_viz": false,
+    "zmq": false,
+    "run_name": "",
+    "prefix": "",
+    "suffix": "",
+    "cpu": false,
+    "first_gpu": false,
+    "last_gpu": false,
+    "gpu": 0
+}
+INFO:sleap.nn.training:
+INFO:sleap.nn.training:Training job:
+INFO:sleap.nn.training:{
+    "data": {
+        "labels": {
+            "training_labels": null,
+            "validation_labels": null,
+            "validation_fraction": 0.1,
+            "test_labels": null,
+            "split_by_inds": false,
+            "training_inds": null,
+            "validation_inds": null,
+            "test_inds": null,
+            "search_path_hints": [],
+            "skeletons": []
+        },
+        "preprocessing": {
+            "ensure_rgb": false,
+            "ensure_grayscale": false,
+            "imagenet_mode": null,
+            "input_scaling": 0.5,
+            "pad_to_stride": null,
+            "resize_and_pad_to_target": true,
+            "target_height": null,
+            "target_width": null
+        },
+        "instance_cropping": {
+            "center_on_part": null,
+            "crop_size": null,
+            "crop_size_detection_padding": 16
+        }
+    },
+    "model": {
+        "backbone": {
+            "leap": null,
+            "unet": {
+                "stem_stride": null,
+                "max_stride": 16,
+                "output_stride": 2,
+                "filters": 16,
+                "filters_rate": 2.0,
+                "middle_block": true,
+                "up_interpolate": true,
+                "stacks": 1
+            },
+            "hourglass": null,
+            "resnet": null,
+            "pretrained_encoder": null
+        },
+        "heads": {
+            "single_instance": null,
+            "centroid": {
+                "anchor_part": null,
+                "sigma": 2.5,
+                "output_stride": 2,
+                "offset_refinement": false
+            },
+            "centered_instance": null,
+            "multi_instance": null
+        }
+    },
+    "optimization": {
+        "preload_data": true,
+        "augmentation_config": {
+            "rotate": true,
+            "rotation_min_angle": -15.0,
+            "rotation_max_angle": 15.0,
+            "translate": false,
+            "translate_min": -5,
+            "translate_max": 5,
+            "scale": false,
+            "scale_min": 0.9,
+            "scale_max": 1.1,
+            "uniform_noise": false,
+            "uniform_noise_min_val": 0.0,
+            "uniform_noise_max_val": 10.0,
+            "gaussian_noise": false,
+            "gaussian_noise_mean": 5.0,
+            "gaussian_noise_stddev": 1.0,
+            "contrast": false,
+            "contrast_min_gamma": 0.5,
+            "contrast_max_gamma": 2.0,
+            "brightness": false,
+            "brightness_min_val": 0.0,
+            "brightness_max_val": 10.0,
+            "random_crop": false,
+            "random_crop_height": 256,
+            "random_crop_width": 256,
+            "random_flip": false,
+            "flip_horizontal": true
+        },
+        "online_shuffling": true,
+        "shuffle_buffer_size": 128,
+        "prefetch": true,
+        "batch_size": 4,
+        "batches_per_epoch": null,
+        "min_batches_per_epoch": 200,
+        "val_batches_per_epoch": null,
+        "min_val_batches_per_epoch": 10,
+        "epochs": 200,
+        "optimizer": "adam",
+        "initial_learning_rate": 0.0001,
+        "learning_rate_schedule": {
+            "reduce_on_plateau": true,
+            "reduction_factor": 0.5,
+            "plateau_min_delta": 1e-08,
+            "plateau_patience": 5,
+            "plateau_cooldown": 3,
+            "min_learning_rate": 1e-08
+        },
+        "hard_keypoint_mining": {
+            "online_mining": false,
+            "hard_to_easy_ratio": 2.0,
+            "min_hard_keypoints": 2,
+            "max_hard_keypoints": null,
+            "loss_scale": 5.0
+        },
+        "early_stopping": {
+            "stop_training_on_plateau": true,
+            "plateau_min_delta": 1e-08,
+            "plateau_patience": 20
+        }
+    },
+    "outputs": {
+        "save_outputs": true,
+        "run_name": "baseline.centroid",
+        "run_name_prefix": "",
+        "run_name_suffix": null,
+        "runs_folder": "models",
+        "tags": [],
+        "save_visualizations": true,
+        "delete_viz_images": true,
+        "zip_outputs": false,
+        "log_to_csv": true,
+        "checkpointing": {
+            "initial_model": false,
+            "best_model": true,
+            "every_epoch": false,
+            "latest_model": false,
+            "final_model": false
+        },
+        "tensorboard": {
+            "write_logs": false,
+            "loss_frequency": "epoch",
+            "architecture_graph": false,
+            "profile_graph": false,
+            "visualizations": true
+        },
+        "zmq": {
+            "subscribe_to_controller": false,
+            "controller_address": "tcp://127.0.0.1:9000",
+            "controller_polling_timeout": 10,
+            "publish_updates": false,
+            "publish_address": "tcp://127.0.0.1:9001"
+        }
+    },
+    "name": "",
+    "description": "",
+    "sleap_version": "1.1.5",
+    "filename": "/home/randresdiazrincon/SLEAP_Data/training_profiles/baseline.centroid.json"
+}
+INFO:sleap.nn.training:
+2022-06-06 12:02:59.881219: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcuda.so.1
+2022-06-06 12:02:59.917698: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:982] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2022-06-06 12:02:59.917815: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1716] Found device 0 with properties: 
+pciBusID: 0000:03:00.0 name: NVIDIA GeForce RTX 2080 Ti computeCapability: 7.5
+coreClock: 1.545GHz coreCount: 68 deviceMemorySize: 10.76GiB deviceMemoryBandwidth: 573.69GiB/s
+2022-06-06 12:02:59.917842: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudart.so.10.1
+2022-06-06 12:02:59.918939: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcublas.so.10
+2022-06-06 12:02:59.919942: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcufft.so.10
+2022-06-06 12:02:59.920160: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcurand.so.10
+2022-06-06 12:02:59.921206: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcusolver.so.10
+2022-06-06 12:02:59.921758: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcusparse.so.10
+2022-06-06 12:02:59.924114: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudnn.so.7
+2022-06-06 12:02:59.924241: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:982] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2022-06-06 12:02:59.924407: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:982] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2022-06-06 12:02:59.924490: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1858] Adding visible gpu devices: 0
+INFO:sleap.nn.training:Using GPU 0 for acceleration.
+INFO:sleap.nn.training:Disabled GPU memory pre-allocation.
+INFO:sleap.nn.training:System:
+GPUs: 1/1 available
+  Device: /physical_device:GPU:0
+         Available: True
+        Initalized: False
+     Memory growth: True
+INFO:sleap.nn.training:
+INFO:sleap.nn.training:Initializing trainer...
+INFO:sleap.nn.training:Loading training labels from: /home/randresdiazrincon/SLEAP_Data/labels_rat.v000.pkg.slp
+INFO:sleap.nn.training:Creating training and validation splits from validation fraction: 0.1
+INFO:sleap.nn.training:  Splits: Training = 23 / Validation = 2.
+INFO:sleap.nn.training:Setting up for training...
+INFO:sleap.nn.training:Setting up pipeline builders...
+INFO:sleap.nn.training:Setting up model...
+INFO:sleap.nn.training:Building test pipeline...
+2022-06-06 12:02:59.953160: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN)to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2022-06-06 12:02:59.976124: I tensorflow/core/platform/profile_utils/cpu_utils.cc:104] CPU Frequency: 3600000000 Hz
+2022-06-06 12:02:59.976708: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x5570e4531450 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2022-06-06 12:02:59.976725: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2022-06-06 12:03:00.047694: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:982] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2022-06-06 12:03:00.047879: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x5570e459d160 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2022-06-06 12:03:00.047894: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): NVIDIA GeForce RTX 2080 Ti, Compute Capability 7.5
+2022-06-06 12:03:00.048060: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:982] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2022-06-06 12:03:00.048150: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1716] Found device 0 with properties: 
+pciBusID: 0000:03:00.0 name: NVIDIA GeForce RTX 2080 Ti computeCapability: 7.5
+coreClock: 1.545GHz coreCount: 68 deviceMemorySize: 10.76GiB deviceMemoryBandwidth: 573.69GiB/s
+2022-06-06 12:03:00.048189: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudart.so.10.1
+2022-06-06 12:03:00.048210: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcublas.so.10
+2022-06-06 12:03:00.048227: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcufft.so.10
+2022-06-06 12:03:00.048244: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcurand.so.10
+2022-06-06 12:03:00.048261: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcusolver.so.10
+2022-06-06 12:03:00.048278: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcusparse.so.10
+2022-06-06 12:03:00.048295: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudnn.so.7
+2022-06-06 12:03:00.048345: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:982] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2022-06-06 12:03:00.048457: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:982] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2022-06-06 12:03:00.048533: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1858] Adding visible gpu devices: 0
+2022-06-06 12:03:00.048563: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudart.so.10.1
+2022-06-06 12:03:00.335941: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1257] Device interconnect StreamExecutor with strength 1 edge matrix:
+2022-06-06 12:03:00.335969: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1263]      0 
+2022-06-06 12:03:00.335975: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1276] 0:   N 
+2022-06-06 12:03:00.336201: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:982] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2022-06-06 12:03:00.336378: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:982] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2022-06-06 12:03:00.336470: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1402] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10066 MB memory) -> physical GPU (device: 0, name: NVIDIA GeForce RTX 2080 Ti, pci bus id: 0000:03:00.0, compute capability: 7.5)
+INFO:sleap.nn.training:Loaded test example. [1.361s]
+INFO:sleap.nn.training:  Input shape: (240, 320, 3)
+INFO:sleap.nn.training:Created Keras model.
+INFO:sleap.nn.training:  Backbone: UNet(stacks=1, filters=16, filters_rate=2.0, kernel_size=3, stem_kernel_size=7, convs_per_block=2, stem_blocks=0, down_blocks=4, middle_block=True, up_blocks=3, up_interpolate=True, block_contraction=False)
+INFO:sleap.nn.training:  Max stride: 16
+INFO:sleap.nn.training:  Parameters: 1,953,393
+INFO:sleap.nn.training:  Heads: 
+INFO:sleap.nn.training:    [0] = CentroidConfmapsHead(anchor_part=None, sigma=2.5, output_stride=2, loss_weight=1.0)
+INFO:sleap.nn.training:  Outputs: 
+INFO:sleap.nn.training:    [0] = Tensor("CentroidConfmapsHead_0/BiasAdd:0", shape=(None, 120, 160, 1), dtype=float32)
+INFO:sleap.nn.training:Setting up data pipelines...
+INFO:sleap.nn.training:Training set: n = 23
+INFO:sleap.nn.training:Validation set: n = 2
+INFO:sleap.nn.training:Setting up optimization...
+INFO:sleap.nn.training:  Learning rate schedule: LearningRateScheduleConfig(reduce_on_plateau=True, reduction_factor=0.5, plateau_min_delta=1e-08, plateau_patience=5, plateau_cooldown=3, min_learning_rate=1e-08)
+INFO:sleap.nn.training:  Early stopping: EarlyStoppingConfig(stop_training_on_plateau=True, plateau_min_delta=1e-08, plateau_patience=20)
+INFO:sleap.nn.training:Setting up outputs...
+INFO:sleap.nn.training:Created run path: models/baseline.centroid_4
+INFO:sleap.nn.training:Setting up visualization...
+Unable to use Qt backend for matplotlib. This probably means Qt is running headless.
+Unable to use Qt backend for matplotlib. This probably means Qt is running headless.
+INFO:sleap.nn.training:Finished trainer set up. [3.5s]
+INFO:sleap.nn.training:Creating tf.data.Datasets for training data generation...
+INFO:sleap.nn.training:Finished creating training datasets. [1.5s]
+INFO:sleap.nn.training:Starting training loop...
+2022-06-06 12:03:05.801680: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudnn.so.7
+2022-06-06 12:03:06.502335: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcublas.so.10
+Epoch 1/200
+200/200 - 7s - loss: 0.0010 - val_loss: 0.0010
+Epoch 2/200
+200/200 - 5s - loss: 9.9881e-04 - val_loss: 9.8753e-04
+Epoch 3/200
+200/200 - 5s - loss: 7.8877e-04 - val_loss: 9.1882e-04
+Epoch 4/200
+200/200 - 5s - loss: 5.2145e-04 - val_loss: 0.0014
+Epoch 5/200
+200/200 - 5s - loss: 3.0958e-04 - val_loss: 0.0014
+Epoch 6/200
+200/200 - 5s - loss: 2.0021e-04 - val_loss: 0.0016
+Epoch 7/200
+200/200 - 4s - loss: 1.3171e-04 - val_loss: 0.0016
+Epoch 8/200
+
+Epoch 00008: ReduceLROnPlateau reducing learning rate to 4.999999873689376e-05.
+200/200 - 5s - loss: 9.0638e-05 - val_loss: 0.0016
+Epoch 9/200
+200/200 - 5s - loss: 6.0516e-05 - val_loss: 0.0016
+Epoch 10/200
+200/200 - 5s - loss: 5.4860e-05 - val_loss: 0.0016
+Epoch 11/200
+200/200 - 4s - loss: 5.5432e-05 - val_loss: 0.0015
+Epoch 12/200
+200/200 - 4s - loss: 5.0256e-05 - val_loss: 0.0015
+Epoch 13/200
+200/200 - 4s - loss: 4.6563e-05 - val_loss: 0.0016
+Epoch 14/200
+200/200 - 4s - loss: 5.0444e-05 - val_loss: 0.0016
+Epoch 15/200
+
+Epoch 00015: ReduceLROnPlateau reducing learning rate to 2.499999936844688e-05.
+200/200 - 5s - loss: 4.8838e-05 - val_loss: 0.0016
+Epoch 16/200
+200/200 - 4s - loss: 4.5847e-05 - val_loss: 0.0015
+Epoch 17/200
+200/200 - 4s - loss: 4.8164e-05 - val_loss: 0.0016
+Epoch 18/200
+200/200 - 4s - loss: 4.6150e-05 - val_loss: 0.0015
+Epoch 19/200
+200/200 - 4s - loss: 4.3623e-05 - val_loss: 0.0016
+Epoch 20/200
+200/200 - 4s - loss: 4.0673e-05 - val_loss: 0.0015
+Epoch 21/200
+200/200 - 4s - loss: 3.7017e-05 - val_loss: 0.0015
+Epoch 22/200
+
+Epoch 00022: ReduceLROnPlateau reducing learning rate to 1.249999968422344e-05.
+200/200 - 4s - loss: 2.9616e-05 - val_loss: 0.0015
+Epoch 23/200
+200/200 - 4s - loss: 2.1707e-05 - val_loss: 0.0015
+Epoch 00023: early stopping
+INFO:sleap.nn.training:Finished training loop. [1.8 min]
+INFO:sleap.nn.training:Deleting visualization directory: models/baseline.centroid_4/viz
+INFO:sleap.nn.training:Saving evaluation metrics to model folder...
+Traceback (most recent call last):
+  File "/home/randresdiazrincon/miniconda3/envs/sleap/lib/python3.6/site-packages/tensorflow/python/util/dispatch.py", line 201, in wrapper
+    return target(*args, **kwargs)
+  File "/home/randresdiazrincon/miniconda3/envs/sleap/lib/python3.6/site-packages/tensorflow/python/ops/math_ops.py", line 1296, in truediv
+    return _truediv_python3(x, y, name)
+  File "/home/randresdiazrincon/miniconda3/envs/sleap/lib/python3.6/site-packages/tensorflow/python/ops/math_ops.py", line 1221, in _truediv_python3
+    x = ops.convert_to_tensor(x, name="x")
+  File "/home/randresdiazrincon/miniconda3/envs/sleap/lib/python3.6/site-packages/tensorflow/python/framework/ops.py", line 1499, in convert_to_tensor
+    ret = conversion_func(value, dtype=dtype, name=name, as_ref=as_ref)
+  File "/home/randresdiazrincon/miniconda3/envs/sleap/lib/python3.6/site-packages/tensorflow/python/framework/constant_op.py", line 338, in _constant_tensor_conversion_function
+    return constant(v, dtype=dtype, name=name)
+  File "/home/randresdiazrincon/miniconda3/envs/sleap/lib/python3.6/site-packages/tensorflow/python/framework/constant_op.py", line 264, in constant
+    allow_broadcast=True)
+  File "/home/randresdiazrincon/miniconda3/envs/sleap/lib/python3.6/site-packages/tensorflow/python/framework/constant_op.py", line 275, in _constant_impl
+    return _constant_eager_impl(ctx, value, dtype, shape, verify_shape)
+  File "/home/randresdiazrincon/miniconda3/envs/sleap/lib/python3.6/site-packages/tensorflow/python/framework/constant_op.py", line 300, in _constant_eager_impl
+    t = convert_to_eager_tensor(value, ctx, dtype)
+  File "/home/randresdiazrincon/miniconda3/envs/sleap/lib/python3.6/site-packages/tensorflow/python/framework/constant_op.py", line 98, in convert_to_eager_tensor
+    return ops.EagerTensor(value, ctx.device_name, dtype)
+ValueError: TypeError: object of type 'RaggedTensor' has no len()
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/randresdiazrincon/miniconda3/envs/sleap/bin/sleap-train", line 33, in <module>
+    sys.exit(load_entry_point('sleap==1.1.5', 'console_scripts', 'sleap-train')())
+  File "/home/randresdiazrincon/miniconda3/envs/sleap/lib/python3.6/site-packages/sleap/nn/training.py", line 1617, in main
+    trainer.train()
+  File "/home/randresdiazrincon/miniconda3/envs/sleap/lib/python3.6/site-packages/sleap/nn/training.py", line 904, in train
+    self.evaluate()
+  File "/home/randresdiazrincon/miniconda3/envs/sleap/lib/python3.6/site-packages/sleap/nn/training.py", line 917, in evaluate
+    split_name="train",
+  File "/home/randresdiazrincon/miniconda3/envs/sleap/lib/python3.6/site-packages/sleap/nn/evals.py", line 699, in evaluate_model
+    labels_pr = predictor.predict(labels_reader, make_labels=True)
+  File "/home/randresdiazrincon/miniconda3/envs/sleap/lib/python3.6/site-packages/sleap/nn/inference.py", line 390, in predict
+    self._make_labeled_frames_from_generator(generator, data)
+  File "/home/randresdiazrincon/miniconda3/envs/sleap/lib/python3.6/site-packages/sleap/nn/inference.py", line 2011, in _make_labeled_frames_from_generator
+    for ex in generator:
+  File "/home/randresdiazrincon/miniconda3/envs/sleap/lib/python3.6/site-packages/sleap/nn/inference.py", line 300, in _predict_generator
+    ex = process_batch(ex)
+  File "/home/randresdiazrincon/miniconda3/envs/sleap/lib/python3.6/site-packages/sleap/nn/inference.py", line 279, in process_batch
+    np.expand_dims(ex["scale"], axis=1), axis=1
+  File "/home/randresdiazrincon/miniconda3/envs/sleap/lib/python3.6/site-packages/tensorflow/python/util/dispatch.py", line 205, in wrapper
+    result = dispatch(wrapper, args, kwargs)
+  File "/home/randresdiazrincon/miniconda3/envs/sleap/lib/python3.6/site-packages/tensorflow/python/util/dispatch.py", line 118, in dispatch
+    result = dispatcher.handle(args, kwargs)
+  File "/home/randresdiazrincon/miniconda3/envs/sleap/lib/python3.6/site-packages/tensorflow/python/ops/ragged/ragged_dispatch.py", line 219, in handle
+    ragged_tensor_shape.RaggedTensorDynamicShape.from_tensor(y))
+  File "/home/randresdiazrincon/miniconda3/envs/sleap/lib/python3.6/site-packages/tensorflow/python/ops/ragged/ragged_tensor_shape.py", line 470, in broadcast_dynamic_shape
+    shape_x = shape_x.broadcast_dimension(axis, shape_y.dimension_size(axis))
+  File "/home/randresdiazrincon/miniconda3/envs/sleap/lib/python3.6/site-packages/tensorflow/python/ops/ragged/ragged_tensor_shape.py", line 351, in broadcast_dimension
+    condition, data=broadcast_err, summarize=10)
+  File "/home/randresdiazrincon/miniconda3/envs/sleap/lib/python3.6/site-packages/tensorflow/python/util/dispatch.py", line 201, in wrapper
+    return target(*args, **kwargs)
+  File "/home/randresdiazrincon/miniconda3/envs/sleap/lib/python3.6/site-packages/tensorflow/python/util/tf_should_use.py", line 247, in wrapped
+    return _add_should_use_warning(fn(*args, **kwargs),
+  File "/home/randresdiazrincon/miniconda3/envs/sleap/lib/python3.6/site-packages/tensorflow/python/ops/control_flow_ops.py", line 158, in Assert
+    (condition, "\n".join(data_str)))
+tensorflow.python.framework.errors_impl.InvalidArgumentError: Expected 'tf.Tensor(False, shape=(), dtype=bool)' to be true. Summarized data: b'Unable to broadcast: dimension size mismatch in dimension'
+0
+b'lengths='
+4
+b'dim_size='
+3
