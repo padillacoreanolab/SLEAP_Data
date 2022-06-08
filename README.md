@@ -1,5 +1,3 @@
-# SLEAP_Data
-
 # Instructions
 
 ## Training
