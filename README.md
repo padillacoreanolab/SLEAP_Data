@@ -2,7 +2,7 @@
 
 ## Training
 
-### Bottom-up:++
+### Bottom-up:
 ~~~
 sleap-train ~/SLEAP_Data/training_profiles/baseline_medium_rf.bottomup.json ~/SLEAP_Data/Labeled_data/New_Instance/labels_mouse_instances.v001.pkg.slp
 ~~~
