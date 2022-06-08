@@ -18,9 +18,9 @@ sleap-train ~/SLEAP_Data/training_profiles/baseline.centroid.json ~/SLEAP_Data/L
 
 ### Bottom-up:
 ~~~
-sleap-track ~/SLEAP_Data/videos/video.AVI --video.dataset video --video.input_format channels_last --tracking.tracker simple --tracking.similarity centroid --tracking.target_instance_count -m ~/SLEAP_Data/models/New_Instances/baseline_medium_rf.bottomup
+sleap-track ~/SLEAP_Data/videos/video.AVI --video.dataset video --video.input_format channels_last --tracking.tracker simple --tracking.similarity centroid --tracking.target_instance_count 2 -m ~/SLEAP_Data/models/New_Instances/baseline_medium_rf.bottomup
 ~~~
 ### Top-down:
 ~~~
-sleap-track ~/SLEAP_Data/videos/video.AVI --video.dataset video --video.input_format channels_last --tracking.tracker simple --tracking.similarity centroid --tracking.target_instance_count -m ~/SLEAP_Data/models/New_Instances/baseline_medium_rf.topdown -m ~/SLEAP_Data/models/New_Instances/baseline.centroid
+sleap-track ~/SLEAP_Data/videos/video.AVI --video.dataset video --video.input_format channels_last --tracking.tracker simple --tracking.similarity centroid --tracking.target_instance_count 2 -m ~/SLEAP_Data/models/New_Instances/baseline_medium_rf.topdown -m ~/SLEAP_Data/models/New_Instances/baseline.centroid
 ~~~
