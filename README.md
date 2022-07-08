@@ -4,15 +4,15 @@
 
 ### Bottom-up:
 ~~~
-sleap-train ~/SLEAP_Data/training_profiles/baseline_medium_rf.bottomup.json ~/SLEAP_Data/Labeled_data/New_Instances/labels_mouse_instances.v008.pkg.slp
+sleap-train ~/SLEAP_Data/training_profiles/baseline_medium_rf.bottomup.json ~/SLEAP_Data/labeled_data/labels_mouse_instances.v009.pkg.slp
 ~~~
 
 ### Top-down:
 ~~~
-sleap-train ~/SLEAP_Data/training_profiles/baseline_medium_rf.topdown.json ~/SLEAP_Data/Labeled_data/New_Instances/labels_mouse_instances.v008.pkg.slp
+sleap-train ~/SLEAP_Data/training_profiles/baseline_medium_rf.topdown.json ~/SLEAP_Data/labeled_data/labels_mouse_instances.v009.pkg.slp
 ~~~
 ~~~
-sleap-train ~/SLEAP_Data/training_profiles/baseline.centroid.json ~/SLEAP_Data/Labeled_data/New_Instances/labels_mouse_instances.v008.pkg.slp
+sleap-train ~/SLEAP_Data/training_profiles/baseline.centroid.json ~/SLEAP_Data/labeled_data/labels_mouse_instances.v009.pkg.slp
 ~~~
 ## Inference:
 
