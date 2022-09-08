@@ -1,3 +1,4 @@
 *.pkg.slp filter=lfs diff=lfs merge=lfs -text
 *.slp filter=lfs diff=lfs merge=lfs -text
 *.AVI filter=lfs diff=lfs merge=lfs -text
+*.h5 filter=lfs diff=lfs merge=lfs -text
