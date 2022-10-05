@@ -1,6 +1,4 @@
-# Instructions
-
-## Training
+# Training Instructions
 
 ### Bottom-up:
 ~~~
