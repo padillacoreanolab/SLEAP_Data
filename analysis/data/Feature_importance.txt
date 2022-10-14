@@ -1,0 +1,145 @@
+Zero_onset
+Total Frames: 6000
+Acc: 0.964166
+
+m2_tail_base_y    0.097375
+m2_tail_base_x    0.091499
+m2_thorax_x       0.080783
+m1_tail_base_x    0.062044
+m1_tail_base_y    0.055477
+m2_nose_x         0.044594
+m2_nose_y         0.039677
+m1_thorax_x       0.038859
+m2_thorax_y       0.037050
+m2_right_ear_x    0.036991
+m1_right_ear_x    0.035990
+m1_nose_x         0.034496
+m1_right_ear_y    0.034437
+m2_right_ear_y    0.034132
+m2_forehead_y     0.031625
+m1_left_ear_y     0.031125
+m2_forehead_x     0.030882
+m1_nose_y         0.030469
+m1_forehead_y     0.030180
+m2_left_ear_y     0.028495
+m1_thorax_y       0.025706
+m1_left_ear_x     0.024086
+m1_forehead_x     0.022146
+m2_left_ear_x     0.021880
+
+Three_onset
+Total Frames: 7800
+Acc: 0.9711538461538461
+
+m2_tail_base_x    0.107886
+m2_tail_base_y    0.080520
+m1_tail_base_x    0.064463
+m1_tail_base_y    0.061069
+m2_thorax_x       0.054588
+m2_nose_x         0.047312
+m1_right_ear_y    0.041965
+m2_right_ear_x    0.041422
+m1_left_ear_y     0.040674
+m1_thorax_x       0.040107
+m2_forehead_x     0.034135
+m2_thorax_y       0.032681
+m1_forehead_x     0.032621
+m2_nose_y         0.032405
+m2_forehead_y     0.031753
+m1_thorax_y       0.031665
+m2_left_ear_x     0.030386
+m2_left_ear_y     0.029773
+m1_nose_x         0.028885
+m1_nose_y         0.028837
+m2_right_ear_y    0.027873
+m1_right_ear_x    0.027434
+m1_left_ear_x     0.026531
+m1_forehead_y     0.025014
+
+Five_onset
+Total Frames: 9000
+Acc: 0.9788888888888889
+
+m2_tail_base_x    0.110300
+m1_tail_base_x    0.082985
+m2_tail_base_y    0.082179
+m2_thorax_x       0.072777
+m1_tail_base_y    0.058432
+m2_nose_x         0.048090
+m2_right_ear_x    0.044522
+m1_thorax_x       0.044151
+m1_left_ear_y     0.035502
+m2_left_ear_y     0.035434
+m2_forehead_x     0.035230
+m2_thorax_y       0.034845
+m2_left_ear_x     0.032350
+m1_thorax_y       0.030878
+m2_nose_y         0.029919
+m1_forehead_x     0.029838
+m1_right_ear_x    0.026964
+m1_right_ear_y    0.026398
+m1_left_ear_x     0.026394
+m2_right_ear_y    0.025198
+m1_nose_x         0.025033
+m1_nose_y         0.021335
+m2_forehead_y     0.021328
+m1_forehead_y     0.019915
+
+Ten_onset
+Total Frames: 12000
+Acc: 0.9733333333333334
+
+m2_tail_base_x    0.095316
+m2_thorax_x       0.074951
+m2_tail_base_y    0.074089
+m1_tail_base_x    0.073934
+m1_tail_base_y    0.057859
+m2_right_ear_x    0.051466
+m1_thorax_x       0.048661
+m2_nose_x         0.045373
+m1_right_ear_x    0.041060
+m2_left_ear_y     0.038770
+m2_forehead_x     0.035910
+m2_forehead_y     0.034402
+m2_nose_y         0.033536
+m1_thorax_y       0.030959
+m2_thorax_y       0.028665
+m1_right_ear_y    0.028486
+m2_right_ear_y    0.028027
+m2_left_ear_x     0.027745
+m1_nose_x         0.027722
+m1_forehead_x     0.027398
+m1_left_ear_y     0.025673
+m1_left_ear_x     0.024591
+m1_nose_y         0.023021
+m1_forehead_y     0.022388
+
+Fifteen_onset
+Total Frames: 15000
+Acc: 0.969
+
+m2_thorax_x       0.086389
+m2_tail_base_x    0.082499
+m2_tail_base_y    0.073936
+m1_tail_base_x    0.072963
+m1_tail_base_y    0.059193
+m1_thorax_x       0.058170
+m2_right_ear_x    0.051652
+m2_nose_x         0.049136
+m2_forehead_x     0.042727
+m1_right_ear_x    0.037694
+m2_left_ear_y     0.037673
+m2_thorax_y       0.036196
+m1_thorax_y       0.032497
+m1_nose_x         0.029530
+m1_left_ear_x     0.029379
+m2_forehead_y     0.028660
+m2_nose_y         0.026785
+m1_right_ear_y    0.025861
+m1_left_ear_y     0.025851
+m2_left_ear_x     0.025074
+m1_forehead_x     0.023410
+m2_right_ear_y    0.023324
+m1_nose_y         0.021630
+m1_forehead_y     0.019773
+dtype: float64
